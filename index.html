@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Telegram Web App</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #000; /* Черный фон */
+        }
+        .start-button {
+            padding: 20px 40px;
+            background-color: #4CAF50; /* Зеленая кнопка */
+            color: white;
+            font-size: 20px;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+        }
+        .start-button:hover {
+            background-color: #45a049; /* Более темный оттенок на ховер */
+        }
+    </style>
+</head>
+<body>
+    <button class="start-button">Start</button>
+
+    <script src="https://telegram.org/js/telegram-web-app.js"></script>
+    <script>
+        // Инициализация Web App API Telegram
+        const tg = window.Telegram.WebApp;
+        tg.expand(); // Открыть приложение на весь экран
+
+        document.querySelector('.start-button').addEventListener('click', () => {
+            tg.close(); // Закрыть приложение при нажатии на кнопку
+        });
+    </script>
+</body>
+</html>
